@@ -1,4 +1,3 @@
-- 23.07.11
 # xml
 ## 기본지식
 - layout_width/height: 레이아웃의 크기  
