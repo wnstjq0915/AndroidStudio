@@ -41,4 +41,4 @@
 (변수의 타입은 각 레이아웃의 이름)
 
 ## 개발환경
-![sdk 메니저](sdkset.png)
+![sdk 메니저](img/sdkset.png)
