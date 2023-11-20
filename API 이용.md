@@ -102,7 +102,7 @@ dependencies {
 }
 ```
 ### api 패키지에 retrofit 사용을 위한 준비
-- file폴더의 NetworkClient.java 파일을 api 패키지를 생성하여 안에 넣기.
+- 해당 깃허브의 file폴더의 NetworkClient.java 파일을 프로젝트 내에 api 패키지를 생성하여 안에 넣기.
 
 ### api 패키지에 인터페이스 생성
 #### 예시1
@@ -169,6 +169,74 @@ public interface UserApi {
     // 로그인
     @POST("user/login")
     Call<UserRes> login(@Body User user);
+}
+```
+
+### model 패키지 생성
+- 서버에 요청하여 받은 응답을 사용하기 위해 model 패키지에 클래스를 생성하여 인스턴스 변수 생성하기
+- 서버의 응답과 인스턴스 변수명을 맞춰야 함
+#### 예시1
+```java
+package com.block.bottomtabbar.model;
+
+public class Post {
+
+    public int id;
+    public int userId;
+    public String imgUrl;
+    public String content;
+    public String createdAt;
+    public String updatedAt;
+    public String email;
+    public int isLike;
+    public int likeCnt;
+
+}
+```
+
+#### 예시2
+```java
+package com.ijd1236.googleplace.model;
+
+
+import java.io.Serializable;
+
+public class Place implements Serializable {
+
+    public String name;
+
+    public String vicinity;
+
+    public Geometry geometry;
+
+    public OpeningHours opening_hours;
+
+
+
+    public  class Geometry implements Serializable{
+
+      public Location location;
+
+          public class Location implements Serializable{
+
+             public double lat;
+              public double lng;
+
+
+          }
+      }
+
+
+    public  class OpeningHours implements Serializable{
+
+        public boolean open_now;
+    }
+
+    public Place(String name, String vicinity) {
+        this.name = name;
+        this.vicinity = vicinity;
+    }
+
 }
 ```
 
